@@ -193,3 +193,5 @@ Generate API_KEY on this site. Create ```.env``` file in top level directory. Pu
 Run CMDs <br />
 ``` docker-compose build ``` <br />
 ``` docker-compose up ```
+
+Server is running on port <b>3003</b>
