@@ -20,7 +20,9 @@ const standardizeQueryParams = movie => ({
 // CHECK IF EXISTS IN DB, LATE RMAKE REQUEST
 
 const createMovie = Movies => async movie => {
-  const movieInDatabase = await Movies.getOne({ imdbID: movie.id });
+  const movieInDatabase = await Movies.getOne({
+    $or: [{ imdbID: movie.id }, { title: movie.title }],
+  });
   if (movieInDatabase) {
     return movieInDatabase;
   }
