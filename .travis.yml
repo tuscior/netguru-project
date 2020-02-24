@@ -1,10 +1,17 @@
 sudo: required
+env:
+  - DOCKER_COMPOSE_VERSION=1.4.2
 services:
 - docker
 before_install:
+- sudo rm /usr/local/bin/docker-compose
+- curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+- chmod +x docker-compose
+- sudo mv docker-compose /usr/local/bin
 - docker-compose build
 script:
-- docker run -e CI=true netguru_node npm run test
+- docker build -t netguru/test -f Dockerfile .
+- docker run -e CI=true netguru/test npm run test
 deploy:
   provider: heroku
   strategy: git
