@@ -12,3 +12,4 @@ deploy:
     secure:
   app:
     master: netguru-simple-staging-api
+    production: netguru-simple-prod-api
