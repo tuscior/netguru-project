@@ -1,0 +1,14 @@
+sudo: required
+services:
+- docker
+before_install:
+- docker build -t netguru/simple-api .
+script:
+- docker run -e CI=true netguru/simple-api npm run test
+deploy:
+  provider: heroku
+  strategy: git
+  api_key:
+    secure:
+  app:
+    master: netguru-simple-staging-api

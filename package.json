@@ -1,0 +1,44 @@
+{
+  "name": "netguru",
+  "version": "1.0.0",
+  "description": "Simple API for netguru",
+  "main": "index.js",
+  "scripts": {
+    "lint:fix": "eslint --fix src",
+    "start": "nodemon src/index.js",
+    "test": "jest --ci"
+  },
+  "author": "Karol Tluscik",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.1.1",
+    "helmet": "^3.21.2",
+    "jest": "^25.1.0",
+    "mongodb": "^3.5.3",
+    "mongodb-memory-server": "^6.2.4",
+    "mongoose": "^5.9.2",
+    "morgan": "^1.9.1",
+    "node-fetch": "^2.6.0",
+    "node-graceful": "^3.0.0",
+    "prom-client": "^12.0.0",
+    "prometheus-api-metrics": "^2.2.3",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "supertest": "^4.0.2"
+  }
+}

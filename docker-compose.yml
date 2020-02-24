@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: "npm run test"
+
+  node:
+    build:
+      context: .
+    ports:
+      - "3003:3003"
+    networks:
+      - nodeapp-network
+    depends_on:
+      - mongodb
+    volumes:
+      - /app/node_modules
+      - .:/app
+
+  mongodb:
+    image: mongo
+    networks:
+      - nodeapp-network
+
+networks:
+  nodeapp-network:
+    driver: bridge
