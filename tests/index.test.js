@@ -71,7 +71,7 @@ describe('http', () => {
       return requestRunner
         .get('/movies')
         .expect(200)
-        .expect(res => res.body[0].title === 'Batman');
+        .expect(res => res.body.length === 1);
     });
   });
   afterAll(async () => {
