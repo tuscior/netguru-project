@@ -9,4 +9,13 @@ const Movie = new Schema(
   { strict: false }
 );
 
+Movie.set('toJSON', {
+  virtuals: true,
+});
+
+Movie.options.toJSON.transform = (_, ret) => {
+  delete ret._id;
+  delete ret.__v;
+};
+
 module.exports = mongoose.model('Movie', Movie);

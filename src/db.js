@@ -4,9 +4,8 @@ const startDatabase = (url, db) => {
   db.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-  })
-    .then(ok => ok)
-    .catch(err => console.log(err));
+  });
+
   db.connection.on('connected', function() {
     logger.info(`Mongoose connected to ${url}`);
   });

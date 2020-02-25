@@ -81,7 +81,7 @@ You can use title or id but one of them is required.
     "__v": 0
 }
 
-Example movie or 
+Example movie or
 
 {
     "Response": "False",
@@ -100,8 +100,6 @@ Creates comments ``
 | -------------:|:--------:|:-------:| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `author` | required | string  | Your name, nickname                                                                   |
 | `comment` | required | string |  Comment
-
-You can use title or id but one of them is required.
 
 **Response**
 

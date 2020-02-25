@@ -16,4 +16,13 @@ const Comment = new Schema(
   { strict: true }
 );
 
+Comment.set('toJSON', {
+  virtuals: true,
+});
+
+Comment.options.toJSON.transform = (_, ret) => {
+  delete ret._id;
+  delete ret.__v;
+};
+
 module.exports = mongoose.model('Comment', Comment);
